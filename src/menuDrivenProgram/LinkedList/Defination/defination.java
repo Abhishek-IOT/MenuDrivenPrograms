@@ -20,6 +20,11 @@ public class defination<documents> implements LinkedListADT<documents> {
         size++;
     }
 
+    public void addAfter(Node<documents> node, documents data) {
+        Node<documents> node1 = new Node<documents>(data, node.next);
+        node.next = node1;
+        size++;
+    }
 
 
 
