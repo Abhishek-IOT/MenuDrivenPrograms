@@ -5,6 +5,23 @@ import menuDrivenProgram.LinkedList.ADT.LinkedListADT;
 public class defination<documents> implements LinkedListADT<documents> {
     private Node<documents> head = null;
     private int size = 0;
+
+    private Node<documents> getNode(int index) {
+        Node<documents> response = null;
+        for (int i = 0; i < index; i++) {
+
+            response = response.getNext();
+        }
+        return response;
+    }
+
+
+
+
+
+
+
+
     @Override
     public void add(documents data) {
 
