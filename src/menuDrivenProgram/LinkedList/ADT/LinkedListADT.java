@@ -1,13 +1,13 @@
 package menuDrivenProgram.LinkedList.ADT;
 
-public interface LinkedListADT<documents> {
+public interface LinkedListADT<Page> {
 
 
-    void add(documents data);
+    void add(Page data);
 
-    void remove(documents data);
+    Page remove(Page data);
 
-    int search(documents data);
+    int search(Page data);
 
     void print();
 

@@ -49,14 +49,57 @@ public class defination<Page> implements LinkedListADT<Page> {
         add(size, data);
     }
 
-    @Override
-    public void remove(Page data) {
+    public Page removeFirst() {
+        Page response = null;
+        Node<Page> temp = head;
+        if (head != null) {
+            head = head.getNext();
+            size--;
+            response = temp.getItem();
+        }
+        return response;
+    }
 
+    public Page removeAfter(Node<Page> node) {
+        Page response = null;
+        Node<Page> temp = node.getNext();
+        if (temp != null) {
+            node.next = node.getNext();
+            size--;
+            response = temp.getItem();
+        }
+        return response;
+    }
+
+    public Page remove(int index) {
+        Page response = null;
+        if (index == 0 || index > size) {
+            throw new IndexOutOfBoundsException("invalid index");
+        }
+        if (index == 0) {
+            removeFirst();
+        } else {
+            Node<Page> previous = getNode(index - 1);
+            response = removeAfter(previous);
+        }
+        return response;
+    }
+
+    @Override
+    public Page remove(Page data) {
+        return remove(size - 1);
     }
 
     @Override
     public int search(Page data) {
-        return 0;
+        int response = -1;
+        for (int i = 0; i < size; i++) {
+            Page temp = this.getNode(i).getItem();
+            if (temp.equals(data)) {
+                response = i;
+            }
+        }
+        return response;
     }
 
     @Override
