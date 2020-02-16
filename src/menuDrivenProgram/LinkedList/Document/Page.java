@@ -8,6 +8,15 @@ public class Page {
         return pageNo;
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Page{");
+        sb.append("pageNo=").append(pageNo);
+        sb.append(", pageDetails='").append(pageDetails).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     public String getPageDetails() {
         return pageDetails;
     }
