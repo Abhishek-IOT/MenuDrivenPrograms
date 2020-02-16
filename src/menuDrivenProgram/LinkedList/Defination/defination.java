@@ -116,7 +116,7 @@ public class defination<Page> implements LinkedListADT<Page> {
 
     @Override
     public void print() {
-        System.out.println(toString());
+        toString();
     }
 
 
