@@ -103,29 +103,42 @@ public class defination<Page> implements LinkedListADT<Page> {
     }
 
     @Override
-    public void print() {
-
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("defination                      ");
+        for (int i = 0; i < size; i++) {
+            Page data = getNode(i).getItem();
+            sb.append(data);
+        }
+        sb.append('.');
+        return sb.toString();
     }
 
-    private static class Node<documents> {
-        private documents item;
-        private Node<documents> next = null;
 
-        public Node(documents item) {
+    @Override
+    public void print() {
+        System.out.println(toString());
+    }
+
+
+    private static class Node<Page> {
+        private Page item;
+        private Node<Page> next = null;
+
+        public Node(Page item) {
             this.item = item;
             this.next = null;
         }
 
-        public Node(documents item, Node<documents> next) {
+        public Node(Page item, Node<Page> next) {
             this.item = item;
             this.next = next;
         }
 
-        public documents getItem() {
+        public Page getItem() {
             return item;
         }
 
-        public Node<documents> getNext() {
+        public Node<Page> getNext() {
             return next;
         }
 
