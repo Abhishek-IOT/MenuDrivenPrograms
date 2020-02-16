@@ -3,7 +3,8 @@ package menuDrivenProgram.LinkedList.Defination;
 import menuDrivenProgram.LinkedList.ADT.LinkedListADT;
 
 public class defination<documents> implements LinkedListADT<documents> {
-
+    private Node<documents> head = null;
+    private int size = 0;
     @Override
     public void add(documents data) {
 
