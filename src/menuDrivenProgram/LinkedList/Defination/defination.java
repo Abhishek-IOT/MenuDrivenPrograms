@@ -26,6 +26,17 @@ public class defination<documents> implements LinkedListADT<documents> {
         size++;
     }
 
+    public void add(int index, documents data) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("invalid index found");
+        }
+        if (index == 0) {
+            addFirst(data);
+        } else {
+            Node<documents> temp = getNode(index - 1);
+            addAfter(temp, data);
+        }
+    }
 
 
 
@@ -34,7 +45,7 @@ public class defination<documents> implements LinkedListADT<documents> {
 
     @Override
     public void add(documents data) {
-
+        add(size, data);
     }
 
     @Override
