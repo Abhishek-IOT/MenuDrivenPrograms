@@ -2,12 +2,13 @@ package menuDrivenProgram.LinkedList.Defination;
 
 import menuDrivenProgram.LinkedList.ADT.LinkedListADT;
 
-public class defination<documents> implements LinkedListADT<documents> {
-    private Node<documents> head = null;
+public class defination<Page> implements LinkedListADT<Page> {
+    private Node<Page> head = null;
     private int size = 0;
 
-    private Node<documents> getNode(int index) {
-        Node<documents> response = null;
+
+    private Node<Page> getNode(int index) {
+        Node<Page> response = null;
         for (int i = 0; i < index; i++) {
 
             response = response.getNext();
@@ -15,25 +16,25 @@ public class defination<documents> implements LinkedListADT<documents> {
         return response;
     }
 
-    public void addFirst(documents data) {
-        head = new Node<documents>(data, head);
+    public void addFirst(Page data) {
+        head = new Node<Page>(data, head);
         size++;
     }
 
-    public void addAfter(Node<documents> node, documents data) {
-        Node<documents> node1 = new Node<documents>(data, node.next);
+    public void addAfter(Node<Page> node, Page data) {
+        Node<Page> node1 = new Node<Page>(data, node.next);
         node.next = node1;
         size++;
     }
 
-    public void add(int index, documents data) {
+    public void add(int index, Page data) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("invalid index found");
         }
         if (index == 0) {
             addFirst(data);
         } else {
-            Node<documents> temp = getNode(index - 1);
+            Node<Page> temp = getNode(index - 1);
             addAfter(temp, data);
         }
     }
@@ -44,17 +45,17 @@ public class defination<documents> implements LinkedListADT<documents> {
 
 
     @Override
-    public void add(documents data) {
+    public void add(Page data) {
         add(size, data);
     }
 
     @Override
-    public void remove(documents data) {
+    public void remove(Page data) {
 
     }
 
     @Override
-    public int search(documents data) {
+    public int search(Page data) {
         return 0;
     }
 
