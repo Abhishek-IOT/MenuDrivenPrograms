@@ -1,7 +1,6 @@
 package menuDrivenProgram.LinkedList.ADT;
 
-public interface LinkedListADT {
-
+public interface LinkedListADT<document> {
 
 
 
