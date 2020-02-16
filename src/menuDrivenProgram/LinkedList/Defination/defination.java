@@ -15,6 +15,11 @@ public class defination<documents> implements LinkedListADT<documents> {
         return response;
     }
 
+    public void addFirst(documents data) {
+        head = new Node<documents>(data, head);
+        size++;
+    }
+
 
 
 
