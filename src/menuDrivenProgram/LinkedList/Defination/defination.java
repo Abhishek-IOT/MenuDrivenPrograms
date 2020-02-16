@@ -24,5 +24,28 @@ public class defination<documents> implements LinkedListADT<documents> {
 
     }
 
+    private static class Node<documents> {
+        private documents item;
+        private Node<documents> next = null;
+
+        public Node(documents item) {
+            this.item = item;
+            this.next = null;
+        }
+
+        public Node(documents item, Node<documents> next) {
+            this.item = item;
+            this.next = next;
+        }
+
+        public documents getItem() {
+            return item;
+        }
+
+        public Node<documents> getNext() {
+            return next;
+        }
+
+    }
 
 }
