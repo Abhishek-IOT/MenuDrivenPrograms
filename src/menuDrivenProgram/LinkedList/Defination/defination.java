@@ -104,9 +104,11 @@ public class defination<Page> implements LinkedListADT<Page> {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("defination                      ");
-        for (int i = 0; i < size; i++) {
-            Page data = getNode(i).getItem();
+        Node<Page> response = head;
+        final StringBuffer sb = new StringBuffer("defination");
+        for (int i = 0; i < size && response != null; i++) {
+            Page data = response.getItem();
+            response = response.getNext();
             sb.append(data);
         }
         sb.append('.');
@@ -133,6 +135,7 @@ public class defination<Page> implements LinkedListADT<Page> {
             this.item = item;
             this.next = next;
         }
+
 
         public Page getItem() {
             return item;
